@@ -1,0 +1,109 @@
+:root {
+   --color-ummi: #228be6;
+}
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #f0f0f0;
+}
+
+.navbar {
+    background-color: var(--color-ummi);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar p {
+    text-align : center;
+    margin: auto;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.login-box {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    margin-top: 1rem;
+}
+
+.login-box img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.login-box h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.login-box button {
+    background: linear-gradient(to right, #003366, #0080ff);
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.login-box button:hover {
+    background: #0056b3;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.login-box a {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-box a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background: #111;
+   height: auto;
+   width: 100vw;
+   box-sizing: border-box;
+   color: #fff;
+   box-sizing: border-box;
+}
+.footer p {
+    text-align: center; 
+    font-size: 12px;
+    font-style: italic;
+}
+.footer h3 {
+    text-align: center;
+    color: #fff;
+
+}

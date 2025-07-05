@@ -1,0 +1,166 @@
+:root {
+    --bg-color: #fff;
+    --snd-bg-color: #d8d5fd;
+    --text-color: #000;
+    --main-color: #003366;
+    --main-color2: #228be5;
+}
+
+/* Global Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--snd-bg-color);
+}
+
+/* Resume Container */
+.resume {
+    width: 95%;
+    display: flex;
+    max-width: 1200px;
+    margin: 25px auto;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar */
+.sidebar {
+    background: var(--main-color);
+    color: #fff;
+    padding: 20px;
+    padding-left: 40px;
+    width: 40%;
+}
+
+.sidebar .profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .profile img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.sidebar .profile p {
+    font-size: 1.5rem;
+}
+
+.sidebar .contact {
+    margin: 2rem 0;
+}
+
+.sidebar h1 {
+    text-align: left;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #fff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.sidebar p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 2px 0;
+}
+
+/* Main Content */
+.main-content {
+    padding: 20px;
+    width: 70%;
+}
+
+.main-content section {
+    margin-bottom: 20px;
+}
+
+.main-content h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #333;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.main-content p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.main-content .about p {
+    text-align: justify;
+}
+
+.main-content .skills-box,
+.main-content .box-toolLanguageP {
+    display: flex;
+}
+
+.main-content {
+    margin-top: 2rem;
+}
+
+.skills-box .softskill,
+.box-toolLanguageP {
+    margin-right: 4rem;
+}
+
+.main-content .box-toolLanguageP .tools {
+    margin-right: 9.5rem;
+}
+
+.main-content .pendidikan ul li {
+    margin-bottom: 10px;
+}
+
+@media print {
+    body {
+        background: none;
+        margin: 0px;
+        padding: 0;
+    }
+
+    .resume {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        box-shadow: 0 4px 10px rgba(0.5, 0.5, 0, 0.2);
+    }
+
+    .sidebar {
+        width: 30%;
+        padding: 15px;
+    }
+
+    .main-content {
+        width: 70%;
+    }
+
+    .profile img {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .no-print {
+        display: none;
+    }
+
+    h1, h2, h3, h4, p, .skills-box, .box-toolLanguageP {
+        page-break-inside: avoid;
+    }
+
+    .resume {
+        page-break-before: auto;
+    }
+}

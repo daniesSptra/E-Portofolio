@@ -1,0 +1,106 @@
+/* Reset dasar */
+body,
+h1,
+h2,
+p,
+a {
+  margin: 0;
+  padding: 0;
+}
+
+/* Gaya body */
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  margin: 5rem 0 auto;
+}
+
+
+.profile-card {
+  width: 240px;
+  height:430px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.profile-image {
+  width: 200px;
+  height: 215px;
+  border: 5px solid gray;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.profile-image img{
+  border-radius: 5px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  margin-bottom: 5px;
+  width: 200px;
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #112f4c;
+}
+
+.btn-secondary {
+  background-color: #49a1ff;
+}
+
+.btn-success {
+  background-color: #57943a;
+}
+
+.btn-danger {
+  background-color: rgb(198, 36, 36);
+}
+
+.btn:hover {
+  filter: brightness(80%);
+}
+
+/* main */
+.main {
+  background-color: #fff;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.main h4 {
+  text-align: left;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.main .row {
+  margin-bottom: 10px;
+}
+
+.rotate-x-90 {
+  transform: rotateX(90deg);
+}

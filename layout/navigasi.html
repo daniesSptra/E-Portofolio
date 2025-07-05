@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --color-ummi: #228be6;
+        --color-nav: linear-gradient(to right, #003366, #0080ff);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        user-select: none;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #f4f4f4;
+      }
+
+      header {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        right: 0;
+        background: var(--color-nav);
+        color: white;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      header nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 1.5rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      header nav a:last-child {
+        background-color: white;
+        color: var(--color-ummi);
+        padding: 5px 15px;
+        border-radius: 5px;
+      }
+
+      header nav a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 onclick="window.location.href='dashboard.php';">E-Portofolio Dashboard</h1>
+      <nav>
+        <a href="dashboard.php">Home</a>
+        <a href="profile.php">Profile</a>
+        <a href="template_page.php">Portofolio</a>
+        <a href="template_page_cv.php">My CV</a>
+        <a href="download.php">Download</a>
+      </nav>
+    </header>
+  </body>
+</html>

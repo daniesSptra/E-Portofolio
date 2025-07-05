@@ -1,0 +1,68 @@
+:root {
+  --color-ummi: #228be6;
+  --color-nav: linear-gradient(to right, #003366, #0080ff);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  cursor: default;
+  user-select: none
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 4rem 2rem;
+  background: var(--color-ummi);
+  color: white;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero button {
+  width: 200px;
+  margin-bottom: 10px;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #003366;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hero .start button:hover {
+  background-color: #012141;
+}
+
+.hero form button {
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(236, 0, 0);
+  transition: ease-in 0.15s;
+}
+
+.hero form button:hover {
+  background-color: rgb(179, 0, 0);
+}
