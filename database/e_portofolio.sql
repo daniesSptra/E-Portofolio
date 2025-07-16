@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2025 at 11:06 PM
+-- Generation Time: Jul 16, 2025 at 04:47 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -48,19 +48,6 @@ CREATE TABLE `communication_languages` (
   `level` enum('Beginner','Intermediate','Advanced') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `communication_languages`
---
-
-INSERT INTO `communication_languages` (`id_communication`, `id_profile`, `language`, `level`) VALUES
-(6, 14, 'Indonesia', 'Beginner'),
-(8, 16, 'Indonesia', 'Advanced'),
-(24, 17, 'Indonesia', 'Advanced'),
-(25, 17, 'Inggris', 'Beginner'),
-(26, 17, 'Jepang', 'Intermediate'),
-(29, 12, 'Indonesia', 'Advanced'),
-(30, 12, 'Inggris', 'Beginner');
-
 -- --------------------------------------------------------
 
 --
@@ -74,17 +61,6 @@ CREATE TABLE `experience` (
   `deskripsi` text NOT NULL DEFAULT '\'-\''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `experience`
---
-
-INSERT INTO `experience` (`id_experience`, `id_profile`, `lokasi`, `deskripsi`) VALUES
-(4, 14, '', ''),
-(6, 16, '', ''),
-(17, 17, 'PT Informasi Digital - Magang (1 Novermber 2023 - 2 Januari 2024) ', 'Mengelola dan perawatan Sistem Jaringan'),
-(18, 17, 'Himpunan Mahasiswa Informatika - Divisi PSDM (periode 2023 - 2024)', 'Meningkatkan Sumber Daya manusiwa dalam membangun mahasiswa yang siap masuk ke dunia yang profesional'),
-(20, 12, 'PT ABC ABADI - Magang(2021-2022)', 'Melakukan Manajemen Data Barang');
-
 -- --------------------------------------------------------
 
 --
@@ -97,17 +73,6 @@ CREATE TABLE `hardskills` (
   `skill` varchar(255) DEFAULT '''-'''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `hardskills`
---
-
-INSERT INTO `hardskills` (`id_hardskills`, `id_profile`, `skill`) VALUES
-(6, 14, 'Desain Grafis'),
-(8, 16, 'Ui/Ux'),
-(16, 17, 'Data Analis'),
-(19, 12, 'Front-End'),
-(20, 12, 'Backend');
-
 -- --------------------------------------------------------
 
 --
@@ -119,21 +84,6 @@ CREATE TABLE `languages` (
   `id_profile` int(11) NOT NULL,
   `language_prog` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `languages`
---
-
-INSERT INTO `languages` (`id_languages`, `id_profile`, `language_prog`) VALUES
-(7, 14, 'HTML'),
-(9, 16, ''),
-(34, 17, 'HTML5'),
-(35, 17, 'CSS3'),
-(36, 17, 'Javascript'),
-(37, 17, 'python'),
-(38, 17, 'typescript'),
-(42, 12, 'Javascript'),
-(43, 12, 'Python');
 
 -- --------------------------------------------------------
 
@@ -151,16 +101,6 @@ CREATE TABLE `profile` (
   `ipk` float(3,2) DEFAULT NULL,
   `foto` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `profile`
---
-
-INSERT INTO `profile` (`id_profile`, `nim`, `email`, `no_telepon`, `alamat`, `asal_sekolah`, `ipk`, `foto`) VALUES
-(12, 2330511106, 'danies106@ummi.ac.id', '085846421151', 'Kabupaten Sukabumi', 'SMK DWIWARNA', 3.78, '678a78533782b.jpg'),
-(14, 2330311041, 'erginihbos33@gmail.com', '081234567678', 'Japang Kulon', 'SMAN 1 Jampangkulon', 3.50, '678aa6393c00d.jpg'),
-(16, 2330511107, 'endass222@gmail.com', '081234567678', 'pcibadak', 'SMKN 1 CIBADAK', 3.58, '678c8ea5ec27f.jpg'),
-(17, 1234567890, 'emailmahasiswa234@gmail.com', '085534567890', 'Nama Jalan/Kampung, Nama Desa, Nama Kecamatan, Kabupaten/Kota', 'SMAN 1 INDONESIA', 3.78, '678f13670b74e.jpeg');
 
 -- --------------------------------------------------------
 
@@ -189,17 +129,6 @@ CREATE TABLE `softskills` (
   `skill` varchar(255) DEFAULT '''-'''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `softskills`
---
-
-INSERT INTO `softskills` (`id_softskills`, `id_profile`, `skill`) VALUES
-(6, 14, 'Public Speaking'),
-(8, 16, 'Manajemen Waktu'),
-(16, 17, 'Komunikasi Dengan Baik'),
-(19, 12, 'Komunikasi Dengan Baik'),
-(20, 12, 'Tanggung Jawab');
-
 -- --------------------------------------------------------
 
 --
@@ -211,16 +140,6 @@ CREATE TABLE `tools` (
   `id_profile` int(11) NOT NULL,
   `tool` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tools`
---
-
-INSERT INTO `tools` (`id_tools`, `id_profile`, `tool`) VALUES
-(6, 14, 'Adobe  Photoshop'),
-(8, 16, 'Figma'),
-(19, 17, 'Visual-Studio'),
-(21, 12, 'Git');
 
 -- --------------------------------------------------------
 
@@ -238,19 +157,6 @@ CREATE TABLE `users_mhs` (
   `program_studi` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users_mhs`
---
-
-INSERT INTO `users_mhs` (`id`, `nim`, `nama_lengkap`, `tanggal_lahir`, `jenis_kelamin`, `fakultas`, `program_studi`, `password`) VALUES
-(16, 2330511106, 'Danies Syabian Saputra', '2004-09-29', 'Laki-laki', 'Sains dan Teknologi', 'S1 Teknik Informatika', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9'),
-(21, 2330311041, 'Ergi Nurjamil', '2004-04-22', 'Laki-laki', 'Sains dan Teknologi', 'S1 Teknik Informatika', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9'),
-(23, 2330511107, 'Muammad Naufal Endas', '2003-07-17', 'Laki-laki', 'Sains dan Teknologi', 'S1 Teknik Informatika', '1f2b1986fc0484a9b4e3100ac38bff95d3204d8ad6390e182ba1c1c697c47f65'),
-(24, 23305111099, 'Khairusy', '2004-03-12', 'Laki-laki', 'Sains dan Teknologi', 'S1 Teknik Informatika', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9'),
-(25, 1234567890, 'Nama Mahasiswa', '2000-01-01', 'Laki-laki', 'Sains dan Teknologi', 'S1 Teknik Informatika', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9'),
-(27, 2330511100, 'Moch DIka Herdian Shopa', '2004-02-20', 'Laki-laki', 'Sains dan Teknologi', 'S1 Teknik Informatika', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9'),
-(28, 12345678, 'akun tumbal', '2003-01-02', 'Laki-laki', 'Sains dan Teknologi', 'S1 Teknik Sipil', 'e210e8145499e7bfa4c544ab6f58f5591cf094a96c8ee40d23d8bd49ed0f73d6');
 
 --
 -- Indexes for dumped tables
