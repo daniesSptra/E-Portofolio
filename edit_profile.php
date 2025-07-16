@@ -277,12 +277,12 @@ if (isset($_POST["update"])) {
             $stmt->close();
         }
 
-        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                Data berhasil diperbarui!
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>';
+            echo "<script>
+                alert('Profil berhasil diperbarui!');
+                window.location.href = 'profile.php';
+            </script>";
+            exit;
+
     } else {
         echo "Error: " . $stmt->error;
     }
@@ -334,19 +334,19 @@ if (isset($_POST["update"])) {
                 <div class="col">
                     <div class="input-group mb-1">
                         <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
-                        <input type="email" name="email" value="<?php echo $profile['email']; ?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <input type="email" name="email" value="<?= $profile['email'] ?? '' ?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                 </div>
                 <div class="col">
                     <div class="input-group mb-1">
                         <span class="input-group-text" id="inputGroup-sizing-default">Nomor Telepon</span>
-                        <input type="tel" name="no_telepon" value="<?php echo $profile['no_telepon']; ?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <input type="tel" name="no_telepon" value="<?= $profile['no_telepon'] ?? ''; ?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                 </div>
                 <div class="col">
                     <div class="input-group mb-1">
                         <span class="input-group-text" id="inputGroup-sizing-default">Alamat</span>
-                        <textarea class="form-control" name="alamat" placeholder="Tulis Alamat Anda Disini" id="exampleFormControlTextarea1" rows="3"><?php echo $profile['alamat']; ?></textarea>
+                        <textarea class="form-control" name="alamat" placeholder="Tulis Alamat Anda Disini" id="exampleFormControlTextarea1" rows="3"><?php echo $profile['alamat'] ?? ''; ?></textarea>
                     </div>
                 </div>
                 <br>
@@ -358,7 +358,7 @@ if (isset($_POST["update"])) {
                 <div class="col">
                     <div class="input-group mb-1">
                         <span class="input-group-text" id="inputGroup-sizing-default">Asal Sekolah</span>
-                        <input type="text" name="asal_sekolah" value="<?php echo $profile['asal_sekolah']; ?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" name="asal_sekolah" value="<?php echo $profile['asal_sekolah'] ?? ''; ?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                 </div>
                 <br>
@@ -390,7 +390,7 @@ if (isset($_POST["update"])) {
                             echo '<div class="softSkillRow input-group mb-1">
                                     <span class="input-group-text" id="inputGroup-sizing-default">Soft Skill</span>
                                     <input type="text" placeholder="Masukkan Kemampuan Anda" class="form-control" name="softskills[]" value="' . $row['skill'] . '" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-                                    <button type="button" class="removeSoftSkill btn-outline-secondary">-</button>
+                                    <button type="button" class="removeSoftSkill btn btn-danger ms-2">-</button>
                                     <button type="button" id="addSoftSkill" class="text-light bg-primary ms-2 border-0 rounded-end"><i class="fas fa-plus"></i></button>
                                 </div>';
                         }

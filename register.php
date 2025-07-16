@@ -38,6 +38,55 @@ if (isset($_POST['daftar'])) {
             $stmt->bind_param("sssssss", $nim, $nama_lengkap, $tgl_lahir, $jenis_kelamin, $fakultas, $jurusan, $hash_password);
 
             if ($stmt->execute()) {
+                $default = 'Belum ada';
+                $stmt_profile = $db->prepare("INSERT INTO profile (nim) VALUES (?)");
+                $stmt_profile->bind_param("s", $nim);
+                $stmt_profile->execute();
+
+                $id_profile = $db->insert_id;
+
+                $stmt_profile->close();
+
+                // Insert softskill
+                $stmt = $db->prepare("INSERT INTO softskills (id_profile, skill) VALUES (?, ?)");
+                $stmt->bind_param("is", $id_profile, $default);
+                $stmt->execute();
+
+                // Hardskill
+                $stmt = $db->prepare("INSERT INTO hardskills (id_profile, skill) VALUES (?, ?)");
+                $stmt->bind_param("is", $id_profile, $default);
+                $stmt->execute();
+
+                // Tools
+                $stmt = $db->prepare("INSERT INTO tools (id_profile, tool) VALUES (?, ?)");
+                $stmt->bind_param("is", $id_profile, $default);
+                $stmt->execute();
+
+                // Languages (Pemrograman)
+                $stmt = $db->prepare("INSERT INTO languages (id_profile, language_prog) VALUES (?, ?)");
+                $stmt->bind_param("is", $id_profile, $default);
+                $stmt->execute();
+                
+                // Communication Languages
+                $stmt = $db->prepare("INSERT INTO communication_languages (id_profile, language, level) VALUES (?, ?, ?)");
+                $stmt->bind_param("iss", $id_profile, $default, $level);
+                $stmt->execute();
+
+                // Experience
+                $stmt = $db->prepare("INSERT INTO experience (id_profile, lokasi, deskripsi) VALUES (?, ?, ?)");
+                $stmt->bind_param("iss", $id_profile, $default, $default);
+                $stmt->execute();
+
+                // Project
+                $stmt = $db->prepare("INSERT INTO projects (id_profile, project_thumb, project_link, project_name, description) VALUES (?, ?, ?, ?, ?)");
+                $stmt->bind_param("issss", $id_profile, $imgDefault, $linkDefault, $default, $default);
+                $stmt->execute();
+
+                // Certificate
+                $stmt = $db->prepare("INSERT INTO certificates (id_profile, certificate_thumbnail, certificate_link, certificate_description) VALUES (?, ?, ?, ?)");
+                $stmt->bind_param("isss", $id_profile, $imgDefault, $linkDefault, $default);
+                $stmt->execute();
+
                 echo "<script>
                     alert('Pendaftaran berhasil! Anda akan dialihkan ke halaman login.');
                     window.location.href = 'index.php'; // Redirect ke halaman login
